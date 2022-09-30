@@ -1,0 +1,8 @@
+patch:
+  menu:
+    page_size: 5
+  schema_list:
+    - { schema: double_pinyin }
+    - { schema: clover }
+    - { schema: easy_en }
+    - { schema: zhengcode }

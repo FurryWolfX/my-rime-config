@@ -1,0 +1,182 @@
+# Rime schema settings
+# encoding: utf-8
+# for zhengcode
+
+schema:
+  schema_id: zhengcode
+  name: 郑码
+  version: "0.1.2"
+  author:
+    - 发明人 郑易里教授
+    - 方案制作 X
+  description: 大字符集郑码
+    按 ` 进行拼音反查
+  dependencies:
+    - clover
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: ["中文", "英文"]
+  - name: full_shape
+    states: ["半角", "全角"]
+  - name: zhs_zht
+    states: ["常规", "繁体"]
+  - name: ascii_punct
+    states: ["。，", "．，"]
+  - options: [gb2312, gbk, utf8]
+    states: ["通用", "增广", "全字符集"]
+    reset: 1
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - affix_segmentor@clover
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator@custom_phrase
+    - table_translator
+    - script_translator@clover
+  filters:
+    - simplifier@tradition
+    - uniquifier
+    - reverse_lookup_filter@zhengcode_lookup
+    - single_char_filter
+    - charset_filter@gb2312
+    - charset_filter@gbk
+    - charset_filter@utf8
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+  auto_select: true
+
+translator:
+  dictionary: zhengcode
+  enable_encoder: true
+  sentence_over_completion: true
+  enable_charset_filter: false #true
+  enable_commit_history: true
+  enable_user_dict: true
+  enable_sentence: true
+  disable_user_dict_for_patterns:
+    - ^[a-z]$
+  preedit_format:
+    - xform/^([a-z]*)$/$1〔\U$1\E〕/
+    - "xlit|ABCDEFGHIJKLMNOPQRSTUVWXYZ|一土王扌艹木石匚虫口日目⺮亻八金月鱼言疒忄氵辶马阝纟|"
+  initial_quality: 1
+
+custom_phrase:
+  dictionary: ""
+  user_dict: zhengcode_custom_phrase
+  db_class: tabledb
+  enable_sentence: false
+  enable_completion: false
+  initial_quality: 1
+
+clover:
+  tag: clover
+  dictionary: clover
+  prefix: "`"
+  suffix: ";"
+  tips: "[拼音]"
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+  closing_tips: "[郑码]"
+
+tradition:
+  opencc_config: s2t.json
+  option_name: zhs_zht
+  tips: all
+
+zhengcode_lookup:
+  tags: [abc, clover]
+  dictionary: zhengcode
+  overwrite_comment: false
+  comment_format:
+    - "xform/$/」/"
+    - "xform/^/「/"
+
+punctuator:
+  import_present: symbols
+  half_shape:
+    "!": "！"
+    '"':
+      pair:
+        - "“"
+        - "”"
+    "#": "#"
+    "$":
+      - "￥"
+      - "$"
+      - "€"
+      - "～"
+      - "×"
+      - "÷"
+      - "°"
+      - "℃"
+      - "‰"
+      - "‱"
+      - "℉"
+      - "©"
+      - "®"
+    "%": "%"
+    "&": "&"
+    "'":
+      pair:
+        - "‘"
+        - "’"
+    "*": "*"
+    "+": "+"
+    ",": "，"
+    "-": "-"
+    ".": "。"
+    "/": "/"
+    "\\": "、"
+    ":": "："
+    ";": "；"
+    "=": "="
+    "?": "？"
+    "@": "@"
+    "(": "（"
+    ")": "）"
+    "[": "【"
+    "]": "】"
+    "{": "「"
+    "}": "」"
+    "<": "《"
+    ">": "》"
+    "^": "……"
+    "_": "——"
+    "`": "`"
+    "|": "·"
+    "~": "~"
+
+key_binder:
+  import_preset: default
+  bindings:
+    - { when: always, accept: Control+Shift+4, toggle: extended_charset }
+    - { when: always, accept: Control+Shift+5, toggle: zh_trad }
+    - { when: always, accept: Control+Shift+dollar, toggle: extended_charset }
+    - { when: always, accept: Control+Shift+percent, toggle: zh_trad }
+
+recognizer:
+  import_preset: default
+  patterns:
+    punct: "^/[0-9]*[a-z]*$"
+    clover: "`[a-z']*;?$"

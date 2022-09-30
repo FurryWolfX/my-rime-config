@@ -1,0 +1,29 @@
+# dictionary: zhengcode schema
+# encoding: utf-8
+#
+# main dictionary
+#  used for manage tables
+
+---
+name: zhengcode
+version: "0.1.20180128"
+sort: original
+use_preset_vocalbulary: false
+columns:
+  - text
+  - code
+  - stem
+encoder:
+  rules:
+    - length_equal: 2
+      formula: "AaAbBaBb"
+    - length_equal: 3
+      formula: "AaBaBbCa"
+    - length_in_range: [4, 10]
+      formula: "AaBaCaDa"
+
+import_tables:
+  - zhengcode.phrases
+  - zhengcode.ajphrases
+  - zhengcode.words
+  - zhengcode.simpphrases
