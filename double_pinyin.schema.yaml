@@ -4,10 +4,10 @@
 schema:
   schema_id: double_pinyin
   name: 自然码Pro
-  version: "1.0"
+  version: "1.1"
   author:
     - wolfx
-  description: 自然码双拼+英文词典
+  description: 自然码双拼+英文词典+emoji
   dependencies:
     - clover
     - easy_en
@@ -16,6 +16,9 @@ switches:
   - name: ascii_mode
     reset: 0
     states: [中文, 西文]
+  - name: emoji_suggestion
+    reset: 1
+    states: ["🈚️️\uFE0E", "🈶️️\uFE0F"]
   - name: full_shape
     states: [半角, 全角]
   - name: simplification
@@ -42,9 +45,11 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
+    - table_translator@custom_phrase
     - reverse_lookup_translator
     - script_translator
   filters:
+    - simplifier@emoji_suggestion
     - simplifier
     - uniquifier
 
@@ -99,6 +104,20 @@ translator:
   enable_user_dict: true
   prism: double_pinyin
 
+emoji_suggestion:
+  opencc_config: emoji.json
+  option_name: emoji_suggestion
+  tips: all
+
+# 自定义短语
+custom_phrase:
+  dictionary: ""
+  user_dict: clover_custom_phrase
+  db_class: tabledb
+  enable_sentence: false
+  enable_completion: false
+  initial_quality: 1
+
 punctuator:
   import_preset: default
 
@@ -110,7 +129,7 @@ reverse_lookup:
   enable_completion: true
   prefix: "`"
   suffix: "'"
-  tips: [EN]
+  tips: (EN)
 
 recognizer:
   import_preset: default

@@ -3,17 +3,8 @@ version: "1"
 sort: by_weight
 
 import_tables:
-  - clover.base
-  - clover.phrase
-  - THUOCL_animal
-  - THUOCL_caijing
-  - THUOCL_car
-  - THUOCL_chengyu
-  - THUOCL_diming
-  - THUOCL_food
-  - THUOCL_IT
-  - THUOCL_law
-  - THUOCL_lishimingren
-  - THUOCL_medical
-  - THUOCL_poem
-  - sogou_new_words
+  - clover.base # 单字库
+  - clover.phrase # 基础词库（<=4字）
+  - clover.phrase5 # 基础词库（>4字）
+  - sogou_new_words # 搜狗网络流行词
+  - sogou_game_gw2 # 激战2专用

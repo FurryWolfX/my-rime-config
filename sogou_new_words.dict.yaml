@@ -1,11 +1,12 @@
 # 网络流行新词
 # 该词库生成自 https://pinyin.sogou.com/dict/detail/index/4
 
+---
 name: sogou_new_words
 version: "5312"
 sort: by_weight
 
----
+...
 阿敖	a ao	1
 阿巴巴	a ba ba	1
 阿巴巴巴	a ba ba ba	1

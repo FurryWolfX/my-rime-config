@@ -1,8 +1,14 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.14.3
+  generator: "Rime::SwitcherSettings"
+  modified_time: "Fri Sep 30 21:34:38 2022"
+  rime_version: 1.5.3
 patch:
   menu:
     page_size: 5
   schema_list:
     - { schema: double_pinyin }
+    - { schema: zhengcode }
     - { schema: clover }
     - { schema: easy_en }
-    - { schema: zhengcode }
