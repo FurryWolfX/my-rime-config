@@ -11,7 +11,7 @@ schema:
   dependencies:
     - clover
     - easy_en
-    - zrm2000
+    - zrm2000_helper
     - stroke
 
 switches:
@@ -50,7 +50,7 @@ engine:
     - script_translator
     - reverse_lookup_translator
     - table_translator@custom_phrase
-    - table_translator@zrm2000
+    - table_translator@zrm2000_helper
     - table_translator@easy_en
   filters:
     - simplifier@emoji_suggestion
@@ -121,8 +121,8 @@ easy_en:
   enable_sentence: false
   initial_quality: 0
 
-zrm2000:
-  dictionary: zrm2000
+zrm2000_helper:
+  dictionary: zrm2000_helper
   enable_sentence: false
   max_phrase_length: 8
 
