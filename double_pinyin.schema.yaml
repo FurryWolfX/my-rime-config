@@ -11,6 +11,8 @@ schema:
   dependencies:
     - clover
     - easy_en
+    - zrm2000
+    - stroke
 
 switches:
   - name: ascii_mode
@@ -45,16 +47,19 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - table_translator@custom_phrase
-    - reverse_lookup_translator
     - script_translator
+    - reverse_lookup_translator
+    - table_translator@custom_phrase
+    - table_translator@zrm2000
+    - table_translator@easy_en
   filters:
     - simplifier@emoji_suggestion
     - simplifier
     - uniquifier
 
 speller:
-  alphabet: zyxwvutsrqponmlkjihgfedcba
+  alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA.,
+  initials: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA
   delimiter: " '"
   algebra:
     # 纠错（易错的前后鼻音）
@@ -104,12 +109,23 @@ translator:
   enable_user_dict: true
   prism: double_pinyin
 
+# 自定义码表
 emoji_suggestion:
   opencc_config: emoji.json
   option_name: emoji_suggestion
   tips: all
 
-# 自定义短语
+easy_en:
+  dictionary: easy_en
+  enable_completion: true
+  enable_sentence: false
+  initial_quality: 0
+
+zrm2000:
+  dictionary: zrm2000
+  enable_sentence: false
+  max_phrase_length: 8
+
 custom_phrase:
   dictionary: ""
   user_dict: clover_custom_phrase
@@ -118,18 +134,29 @@ custom_phrase:
   enable_completion: false
   initial_quality: 1
 
+# 自定义码表 END
+
 punctuator:
   import_preset: default
 
 key_binder:
   import_preset: default
+  bindings:
+    - { when: has_menu, accept: bracketleft, send: Page_Up } # 前翻页键 "["
+    - { when: has_menu, accept: bracketright, send: Page_Down } # 后翻页键 "]"
+    - { when: has_menu, accept: comma, send: comma } # 禁用前翻页键 "."
+    - { when: has_menu, accept: period, send: period } # 禁用后翻页键 ","
 
 reverse_lookup:
-  dictionary: easy_en
+  dictionary: stroke
   enable_completion: true
   prefix: "`"
   suffix: "'"
-  tips: (EN)
+  tips: 〔筆畫〕
+  preedit_format:
+    - xlit/hspnz/一丨丿丶乙/
+  comment_format:
+    - xform/([nl])v/$1ü/
 
 recognizer:
   import_preset: default
