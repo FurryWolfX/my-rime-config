@@ -19,13 +19,13 @@ switches:
     reset: 0
     states: [中文, 西文]
   - name: emoji_suggestion
-    reset: 1
+    reset: 0
     states: ["🈚️️\uFE0E", "🈶️️\uFE0F"]
   - name: full_shape
     states: [半角, 全角]
-  - name: simplification
-    states: [漢字, 汉字]
-    reset: 1
+  - name: zh_simp_s2t
+    reset: 0
+    states: [ 简, 繁 ]
   - name: ascii_punct
     states: [。，, ．，]
 
@@ -56,6 +56,10 @@ engine:
     - simplifier@emoji_suggestion
     - simplifier
     - uniquifier
+
+simplifier:
+  option_name: zh_simp_s2t
+  opencc_config: s2t.json
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA.,
