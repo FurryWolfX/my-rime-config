@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 schema:
-  schema_id: double_pinyin
+  schema_id: zrm2000_clover
   name: 自然码Pro
   version: "1.1"
   author:
@@ -12,7 +12,7 @@ schema:
     - clover
     - easy_en
     - zrm2000_helper
-    - stroke
+    # - stroke
 
 switches:
   - name: ascii_mode
@@ -48,7 +48,7 @@ engine:
   translators:
     - punct_translator
     - script_translator
-    - reverse_lookup_translator
+    # - reverse_lookup_translator
     - table_translator@custom_phrase
     - table_translator@zrm2000_helper
     - table_translator@easy_en
@@ -111,7 +111,7 @@ speller:
 translator:
   dictionary: clover
   enable_user_dict: true
-  prism: double_pinyin
+  prism: zrm2000_clover
 
 # 自定义码表
 emoji_suggestion:
@@ -128,6 +128,7 @@ easy_en:
 zrm2000_helper:
   dictionary: zrm2000_helper
   enable_sentence: false
+  enable_user_dict: false
   max_phrase_length: 8
 
 custom_phrase:
@@ -151,18 +152,18 @@ key_binder:
     - { when: has_menu, accept: comma, send: comma } # 禁用前翻页键 "."
     - { when: has_menu, accept: period, send: period } # 禁用后翻页键 ","
 
-reverse_lookup:
-  dictionary: stroke
-  enable_completion: true
-  prefix: "`"
-  suffix: "'"
-  tips: 〔筆畫〕
-  preedit_format:
-    - xlit/hspnz/一丨丿丶乙/
-  comment_format:
-    - xform/([nl])v/$1ü/
+# reverse_lookup:
+#   dictionary: stroke
+#   enable_completion: true
+#   prefix: "`"
+#   suffix: "'"
+#   tips: 〔筆畫〕
+#   preedit_format:
+#     - xlit/hspnz/一丨丿丶乙/
+#   comment_format:
+#     - xform/([nl])v/$1ü/
 
 recognizer:
   import_preset: default
-  patterns:
-    reverse_lookup: "`[a-z]*'?$"
+  # patterns:
+  #   reverse_lookup: "`[a-z]*'?$"

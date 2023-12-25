@@ -8,7 +8,7 @@ patch:
   menu:
     page_size: 5
   schema_list:
-    - { schema: double_pinyin }
+    - { schema: zrm2000_clover }
     - { schema: zhengcode }
     - { schema: clover }
     - { schema: easy_en }

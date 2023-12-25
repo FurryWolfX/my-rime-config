@@ -3,8 +3,8 @@ version: "1"
 sort: by_weight
 
 import_tables:
-  - clover.base # 单字库
-  - clover.phrase # 基础词库（<=4字）
-  - clover.phrase5 # 基础词库（>4字）
-  - sogou_new_words # 搜狗网络流行词
-  - sogou_game_gw2 # 激战2专用
+  - clover.ext.base # 单字库
+  - clover.ext.phrase # 基础词库（<=4字）
+  - clover.ext.phrase5 # 基础词库（>4字）
+  - clover.ext2.game_gw2 # 激战2专用
+  - clover.ext2.new # 搜狗网络流行词
