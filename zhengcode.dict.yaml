@@ -23,7 +23,7 @@ encoder:
       formula: "AaBaCaDa"
 
 import_tables:
-  - zhengcode.phrases
-  - zhengcode.ajphrases
-  - zhengcode.words
-  - zhengcode.simpphrases
+  - dicts/cn_zhengcode/zhengcode.phrases
+  - dicts/cn_zhengcode/zhengcode.ajphrases
+  - dicts/cn_zhengcode/zhengcode.words
+  - dicts/cn_zhengcode/zhengcode.simpphrases

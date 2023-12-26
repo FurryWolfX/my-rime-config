@@ -81,7 +81,7 @@ translator:
 
 custom_phrase:
   dictionary: ""
-  user_dict: zhengcode_custom_phrase
+  user_dict: dicts/cn_zhengcode/zhengcode_custom_phrase
   db_class: tabledb
   enable_sentence: false
   enable_completion: false
