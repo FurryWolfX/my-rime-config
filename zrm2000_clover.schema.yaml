@@ -4,30 +4,35 @@
 schema:
   schema_id: zrm2000_clover
   name: 自然码Pro
-  version: "1.1"
+  version: "2.0"
   author:
     - wolfx
-  description: 自然码双拼+英文词典+emoji
+  description: 自然码Pro+英文词典+emoji
   dependencies:
     - clover
     - easy_en
     - zrm2000_helper
-    # - stroke
 
+# 开关
+# 鼠须管 0.16 后，用快捷键切换时的提示文字由 states 定义
+# states: 方案选单显示的名称。可以注释掉，仍可以通过快捷键切换。
+# reset: 默认状态。 注释掉后，切换窗口时不会重置到默认状态。
 switches:
   - name: ascii_mode
+    states: [ 中, Ａ ]
     reset: 0
-    states: [中文, 西文]
-  - name: emoji_suggestion
+  - name: ascii_punct # 中英标点
+    states: [ ¥, $ ]
     reset: 0
-    states: ["🈚️️\uFE0E", "🈶️️\uFE0F"]
-  - name: full_shape
-    states: [半角, 全角]
-  - name: zh_simp_s2t
-    reset: 0
+  - name: traditionalization
     states: [ 简, 繁 ]
-  - name: ascii_punct
-    states: [。，, ．，]
+    reset: 0
+  - name: emoji
+    states: [ 💀, 😄 ]
+    reset: 1
+  - name: full_shape
+    states: [ 半角, 全角 ]
+    reset: 0
 
 engine:
   processors:
@@ -48,18 +53,38 @@ engine:
   translators:
     - punct_translator
     - script_translator
-    # - reverse_lookup_translator
-    - table_translator@custom_phrase
-    - table_translator@zrm2000_helper
-    - table_translator@easy_en
+    - lua_translator@date_translator      # 时间、日期、星期
+    - lua_translator@number_translator    # 数字、金额大写
+    - table_translator@custom_phrase      # 自定义
+    - table_translator@zrm2000_helper     # 自然码辅码
+    - table_translator@easy_en            # 英语
   filters:
-    - simplifier@emoji_suggestion
-    - simplifier
-    - uniquifier
+    - simplifier@emoji                    # Emoji
+    - simplifier@traditionalize           # 简繁切换
+    - uniquifier                          # 去重
+    - lua_filter@is_in_user_dict
 
-simplifier:
-  option_name: zh_simp_s2t
-  opencc_config: s2t.json
+is_in_user_dict: true
+
+# Lua 配置: 日期、时间、星期、ISO 8601、时间戳的触发关键字
+date_translator:
+  date: date       # 日期： 2022-11-29
+  time: time       # 时间： 18:13
+  week: week       # 星期： 星期二
+  datetime: datetime   # ISO 8601： 2022-11-29T18:13:11+08:00
+  timestamp: timestamp  # 时间戳： 1669716794
+
+# Emoji
+emoji:
+  opencc_config: emoji.json
+  option_name: emoji
+
+# 简繁切换
+traditionalize:
+  option_name: traditionalization
+  opencc_config: s2t.json             # s2t.json | s2hk.json | s2tw.json | s2twp.json
+  tips: none                          # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
+  excluded_types: [ reverse_lookup ]  # 不转换反查的内容
 
 speller:
   alphabet: zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA.,
@@ -113,12 +138,6 @@ translator:
   enable_user_dict: true
   prism: zrm2000_clover
 
-# 自定义码表
-emoji_suggestion:
-  opencc_config: emoji.json
-  option_name: emoji_suggestion
-  tips: all
-
 easy_en:
   dictionary: easy_en
   enable_completion: true
@@ -152,18 +171,7 @@ key_binder:
     - { when: has_menu, accept: comma, send: comma } # 禁用前翻页键 "."
     - { when: has_menu, accept: period, send: period } # 禁用后翻页键 ","
 
-# reverse_lookup:
-#   dictionary: stroke
-#   enable_completion: true
-#   prefix: "`"
-#   suffix: "'"
-#   tips: 〔筆畫〕
-#   preedit_format:
-#     - xlit/hspnz/一丨丿丶乙/
-#   comment_format:
-#     - xform/([nl])v/$1ü/
-
 recognizer:
   import_preset: default
-  # patterns:
-  #   reverse_lookup: "`[a-z]*'?$"
+  patterns:  # 再增加方案专有的：
+    number: "^R[0-9]+[.]?[0-9]*"      # 响应 number_translator

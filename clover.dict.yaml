@@ -1,10 +1,17 @@
-name: clover
-version: "1"
-sort: by_weight
+# Rime dictionary
+# encoding: utf-8
 
+---
+name: clover
+version: "2023-11-13"
 import_tables:
-  - clover.ext.base # 单字库
-  - clover.ext.phrase # 基础词库（<=4字）
-  - clover.ext.phrase5 # 基础词库（>4字）
-  - clover.ext2.game_gw2 # 激战2专用
-  - clover.ext2.new # 搜狗网络流行词
+  - dicts/cn_py/8105     # 字表
+  # - dicts/cn_py/41448  # 大字表（按需启用）
+  - dicts/cn_py/base     # 基础词库
+  - dicts/cn_py/ext      # 扩展词库
+  - dicts/cn_py/tencent  # 腾讯词向量（大词库，部署时间较长）
+  - dicts/cn_py/others   # 一些杂项
+
+  # 建议把扩展词库放到下面，有重复词条时，最上面的权重生效
+  - dicts/cn_py/user_ext_game_gw2
+...
