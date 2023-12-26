@@ -1,0 +1,12 @@
+var:
+  last_build_time: 1703558831
+  option:
+    simplification: true
+  previously_selected_schema: zrm2000_clover
+  schema_access_time:
+    double_pinyin: 1699279491
+    double_pinyin_f: 1664556433
+    easy_en: 1664547453
+    luna_pinyin: 1664197628
+    zhengcode: 1699279489
+    zrm2000_clover: 1703510061

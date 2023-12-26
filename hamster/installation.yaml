@@ -2,5 +2,6 @@ distribution_code_name: hamster
 distribution_name: hamster
 distribution_version: 2
 install_time: "Mon Dec 25 19:11:54 2023"
-installation_id: "wolfx"
+installation_id: "wolfx-hamster"
+sync_dir: "/private/var/mobile/Library/Mobile Documents/iCloud~dev~fuxiao~app~hamsterapp/Documents/sync"
 rime_version: 1.9.0

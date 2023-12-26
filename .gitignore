@@ -1,8 +1,6 @@
+/.idea/
 /.history/
 /build/
 /sync/
 /*.userdb/
 .DS_Store
-/user.yaml
-/installation.yaml
-/.idea/
