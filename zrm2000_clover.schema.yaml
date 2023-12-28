@@ -95,10 +95,6 @@ speller:
     - derive/eng$/en/
     - derive/in$/ing/
     - derive/ing$/in/
-    # 纠错
-    - derive/an$/ab/ # ab->an
-    - derive/ming$/mt/ # mt->ming
-    - derive/me$/mw/ # mw->me
     # 自然码
     - erase/^xx$/
     - derive/^([jqxy])u$/$1v/
@@ -146,7 +142,7 @@ easy_en:
 zrm2000_helper:
   dictionary: ""
   user_dict: dicts/cn_py/zrm2000_helper
-  db_class: tabledb
+  db_class: stabledb
   enable_sentence: false
   enable_completion: false
   initial_quality: 0
@@ -154,7 +150,7 @@ zrm2000_helper:
 custom_phrase:
   dictionary: ""
   user_dict: dicts/cn_py/custom_phrase
-  db_class: tabledb
+  db_class: stabledb
   enable_sentence: false
   enable_completion: false
   initial_quality: 1
