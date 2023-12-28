@@ -57,6 +57,7 @@ engine:
     - table_translator@custom_phrase      # 自定义
     - table_translator@zrm2000_helper     # 自然码辅码
     - table_translator@easy_en            # 英语
+    - table_translator@cn_en_mix_zrm2000  # 中英混合短语
   filters:
     - simplifier@emoji                    # Emoji
     - simplifier@traditionalize           # 简繁切换
@@ -142,15 +143,23 @@ easy_en:
 zrm2000_helper:
   dictionary: ""
   user_dict: dicts/cn_py/zrm2000_helper
-  db_class: stabledb
+  db_class: stabledb  # 静态库
   enable_sentence: false
   enable_completion: false
+  initial_quality: 0
+
+cn_en_mix_zrm2000:
+  dictionary: ""
+  user_dict: dicts/cn_py/cn_en_mix_zrm2000
+  db_class: stabledb  # 静态库
+  enable_sentence: false
+  enable_completion: true
   initial_quality: 0
 
 custom_phrase:
   dictionary: ""
   user_dict: dicts/cn_py/custom_phrase
-  db_class: stabledb
+  db_class: stabledb  # 静态库
   enable_sentence: false
   enable_completion: false
   initial_quality: 1
