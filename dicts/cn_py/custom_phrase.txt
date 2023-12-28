@@ -1,4 +1,5 @@
 # Rime table
+# coding: utf-8
 #@/db_name	clover_custom_phrase
 #@/db_type	tabledb
 #@/rime_version	1.5.3
