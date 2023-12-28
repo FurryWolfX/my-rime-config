@@ -2,12 +2,11 @@
 #@/db_name	clover_custom_phrase
 #@/db_type	tabledb
 #@/rime_version	1.5.3
-#@/tick	1667
-我们	wm	15
-呜呜	ww	467
-唔唔	ww	343
-呜呜呜	www	348
-唔唔唔	www	300
-嘤嘤嘤	yyy	1
-怎么	zm	312
-早呀	zy	1
+我们	wm
+呜呜	ww
+唔唔	ww
+呜呜呜	www
+唔唔唔	www
+嘤嘤嘤	yyy
+怎么	zm
+早呀	zy

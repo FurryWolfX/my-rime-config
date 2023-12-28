@@ -11,7 +11,6 @@ schema:
   dependencies:
     - clover
     - easy_en
-    - zrm2000_helper
 
 # 开关
 # 鼠须管 0.16 后，用快捷键切换时的提示文字由 states 定义
@@ -145,10 +144,12 @@ easy_en:
   initial_quality: 0
 
 zrm2000_helper:
-  dictionary: zrm2000_helper
+  dictionary: ""
+  user_dict: dicts/cn_py/zrm2000_helper
+  db_class: tabledb
   enable_sentence: false
-  enable_user_dict: false
-  max_phrase_length: 8
+  enable_completion: false
+  initial_quality: 0
 
 custom_phrase:
   dictionary: ""

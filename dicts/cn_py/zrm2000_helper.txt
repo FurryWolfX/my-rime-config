@@ -1,12 +1,7 @@
-﻿# Rime dictionary: zrm2000_helper
-# encoding: utf-8
-# 自然码辅助码
-
----
-name: zrm2000_helper
-version: "1.0.0"
-sort: original
-...
+# Rime table
+#@/db_name	zrm2000_helper
+#@/db_type	tabledb
+#@/rime_version	1.5.3
 啊	aa,,
 阿	aa,,
 锕	aa,,
