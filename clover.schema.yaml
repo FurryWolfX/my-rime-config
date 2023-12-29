@@ -57,7 +57,6 @@ engine:
     - script_translator
     - lua_translator@date_translator      # 时间、日期、星期
     - lua_translator@number_translator    # 数字、金额大写
-    - table_translator@easy_en            # 英语
   filters:
     - simplifier@emoji                    # Emoji
     - simplifier@traditionalize           # 简繁切换
