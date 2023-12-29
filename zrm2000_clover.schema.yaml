@@ -56,7 +56,7 @@ engine:
     - lua_translator@number_translator    # 数字、金额大写
     - table_translator@custom_phrase      # 自定义
     - table_translator@zrm2000_helper     # 自然码辅码
-    - table_translator@easy_en            # 英语
+    # - table_translator@easy_en            # 英语
     - table_translator@cn_en_mix_zrm2000  # 中英混合短语
   filters:
     - simplifier@emoji                    # Emoji
