@@ -92,10 +92,10 @@ speller:
   delimiter: " '"
   algebra:
     # 纠错（易错的前后鼻音）
-    - derive/en$/eng/
-    - derive/eng$/en/
-    - derive/in$/ing/
-    - derive/ing$/in/
+    # - derive/en$/eng/
+    # - derive/eng$/en/
+    # - derive/in$/ing/
+    # - derive/ing$/in/
     # 自然码
     - erase/^xx$/
     - derive/^([jqxy])u$/$1v/
