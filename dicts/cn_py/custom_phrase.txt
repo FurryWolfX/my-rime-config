@@ -3,6 +3,12 @@
 #@/db_name	clover_custom_phrase
 #@/db_type	tabledb
 #@/rime_version	1.5.3
+啊	a
+吧	b
+哦	o
+的	d
+了	l
+呃	e
 我们	wm
 呜呜	ww
 唔唔	ww
