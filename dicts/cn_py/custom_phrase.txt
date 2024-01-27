@@ -16,4 +16,6 @@
 唔唔唔	www
 嘤嘤嘤	yyy
 怎么	zm
+怎么了	zml
+怎么办	zmb
 早呀	zy
