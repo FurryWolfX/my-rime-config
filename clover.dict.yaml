@@ -13,5 +13,7 @@ import_tables:
   - dicts/cn_py/others   # 一些杂项
 
   # 建议把扩展词库放到下面，有重复词条时，最上面的权重生效
+  - dicts/cn_py/user_ext_game_ff14
   - dicts/cn_py/user_ext_game_gw2
+  - dicts/cn_py/user_ext_hot
 ...
