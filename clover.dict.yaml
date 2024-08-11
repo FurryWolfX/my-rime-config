@@ -5,12 +5,12 @@
 name: clover
 version: "2023-11-13"
 import_tables:
-  - dicts/cn_py/8105     # 字表
-  # - dicts/cn_py/41448  # 大字表（按需启用）
-  - dicts/cn_py/base     # 基础词库
-  - dicts/cn_py/ext      # 扩展词库
-  - dicts/cn_py/tencent  # 腾讯词向量（大词库，部署时间较长）
-  - dicts/cn_py/others   # 一些杂项
+  - dicts/cn_py/ice/8105     # 字表
+  # - dicts/cn_py/ice/41448  # 大字表（按需启用）
+  - dicts/cn_py/ice/base     # 基础词库
+  - dicts/cn_py/ice/ext      # 扩展词库
+  - dicts/cn_py/ice/tencent  # 腾讯词向量（大词库，部署时间较长）
+  - dicts/cn_py/ice/others   # 一些杂项
 
   # 建议把扩展词库放到下面，有重复词条时，最上面的权重生效
   - dicts/cn_py/user_ext_game_ff14
