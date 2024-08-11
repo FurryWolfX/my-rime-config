@@ -5,6 +5,7 @@
 name: clover
 version: "2023-11-13"
 import_tables:
+  # https://github.com/iDvel/rime-ice/tree/main
   - dicts/cn_py/ice/8105     # 字表
   # - dicts/cn_py/ice/41448  # 大字表（按需启用）
   - dicts/cn_py/ice/base     # 基础词库
