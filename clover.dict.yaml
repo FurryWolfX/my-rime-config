@@ -4,7 +4,7 @@
 
 ---
 name: clover
-version: "2023-11-13"
+version: "2024-11-26"
 import_tables:
   - dicts/cn_py/ice/8105     # 字表
   # - dicts/cn_py/ice/41448  # 大字表（按需启用）
