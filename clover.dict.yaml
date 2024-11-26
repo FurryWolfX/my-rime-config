@@ -5,16 +5,72 @@
 name: clover
 version: "2023-11-13"
 import_tables:
-  # https://github.com/iDvel/rime-ice/tree/main
   - dicts/cn_py/ice/8105     # 字表
   # - dicts/cn_py/ice/41448  # 大字表（按需启用）
   - dicts/cn_py/ice/base     # 基础词库
   - dicts/cn_py/ice/ext      # 扩展词库
-  - dicts/cn_py/ice/tencent  # 腾讯词向量（大词库，部署时间较长）
+  # - dicts/cn_py/ice/tencent  # 腾讯词向量（大词库，部署时间较长）
   - dicts/cn_py/ice/others   # 一些杂项
+
+  # 细胞词库
+  - dicts/cn_py/cell/animal
+  - dicts/cn_py/cell/chess
+  - dicts/cn_py/cell/chess2
+  - dicts/cn_py/cell/composite
+  - dicts/cn_py/cell/computer
+  - dicts/cn_py/cell/exthot
+  - dicts/cn_py/cell/food
+  - dicts/cn_py/cell/game
+  - dicts/cn_py/cell/geography
+  - dicts/cn_py/cell/history
+  - dicts/cn_py/cell/idiom
+  - dicts/cn_py/cell/industry_product
+  - dicts/cn_py/cell/inputmethod
+  - dicts/cn_py/cell/literature
+  - dicts/cn_py/cell/media
+  - dicts/cn_py/cell/medication
+  - dicts/cn_py/cell/music
+  - dicts/cn_py/cell/name
+  - dicts/cn_py/cell/name2
+  - dicts/cn_py/cell/place
+  - dicts/cn_py/cell/shulihua
+  - dicts/cn_py/cell/sport
 
   # 建议把扩展词库放到下面，有重复词条时，最上面的权重生效
   - dicts/cn_py/user_ext_game_ff14
   - dicts/cn_py/user_ext_game_gw2
   - dicts/cn_py/user_ext_hot
 ...
+
+# 按需启用：
+
+# 大写字母
+# 可在拼音方案下直接输入大写字母（Shift + 字母），大写字母参与造句。
+# 示例：输入 `nihaoASDFzaijian` 得到 `你好ASDF再见`
+# （非雾凇方案的双拼如果要启用，需要参考双拼方案下的 speller/algebra 将大写字母搭桥改成一些特殊字符）
+A	A
+B	B
+C	C
+D	D
+E	E
+F	F
+G	G
+H	H
+I	I
+J	J
+K	K
+L	L
+M	M
+N	N
+O	O
+P	P
+Q	Q
+R	R
+S	S
+T	T
+U	U
+V	V
+W	W
+X	X
+Y	Y
+Z	Z
