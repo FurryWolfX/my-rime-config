@@ -58,6 +58,7 @@ engine:
     - table_translator@zrm2000_helper     # 自然码辅码
     # - table_translator@easy_en            # 英语
     - table_translator@cn_en_mix_zrm2000  # 中英混合短语
+    - lua_translator@*force_gc           # 暴力 GC
   filters:
     - simplifier@emoji                    # Emoji
     - simplifier@traditionalize           # 简繁切换
