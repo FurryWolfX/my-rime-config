@@ -479,8 +479,8 @@ preset_color_schemas:
 preset_keyboards:
   default:
     ascii_mode: 0
-    height: 46
-    height_land: 46
+    height: 80
+    height_land: 80
     horizontal_gap: 6
     vertical_gap: 10
     round_corner: 6
@@ -667,36 +667,36 @@ preset_keyboards:
     vertical_gap: 6.5
     name: number_keyboard
     preview: false
-    height: 46
+    height: 80
     width: 22
     keys:
       #1
       # - {width: 1}
-      - {collection: ["=", "%", "-", "+", "×" , "/", ",", "#", ",", "?", ":", "*"], width: 17, height: 115, row_height: 39, row_vertical_gap: 3, show_row_back_image: false, name: table}
-      - {click: 1, height: 34}
-      - {click: 2, height: 34}
-      - {click: 3, height: 34}
-      - {click: backspace, width: 17, height: 34, name: backspace}
+      - {collection: ["=", "%", "-", "+", "×" , "/", ",", "#", ",", "?", ":", "*"], width: 17, height: 252, row_height: 39, row_vertical_gap: 3, show_row_back_image: false, name: table}
+      - {click: 1, height: 80}
+      - {click: 2, height: 80}
+      - {click: 3, height: 80}
+      - {click: backspace, width: 17, height: 80, name: backspace}
 
       # # #2
       - {width: 17}
-      - {click: 4, height: 34}
-      - {click: 5, height: 34}
-      - {click: 6, height: 34}
-      - {click: send_dot, width: 17, height: 34, name: dot}
+      - {click: 4, height: 80}
+      - {click: 5, height: 80}
+      - {click: 6, height: 80}
+      - {click: send_dot, width: 17, height: 80, name: dot}
 
       - {width: 17}
-      - {click: 7, height: 34}
-      - {click: 8, height: 34}
-      - {click: 9, height: 34}
-      - {click: commit_halfat, width: 17, height: 34, name: halfat}
+      - {click: 7, height: 80}
+      - {click: 8, height: 80}
+      - {click: 9, height: 80}
+      - {click: commit_halfat, width: 17, height: 80, name: halfat}
 
       # - {width: 1}
-      - {click: eisu_toggle_符_dotsymbols, width: 17, height: 32, name: default}
-      - {click: eisu_toggle_返回_default, width: 22, height: 32}
-      - {click: commit_0, height: 32}
-      - {click: space, name: space, height: 32}
-      - {click: return, name: return, width: 17, height: 32, composing: confirm}
+      - {click: eisu_toggle_符_dotsymbols, width: 17, height: 80, name: default}
+      - {click: eisu_toggle_返回_default, width: 22, height: 80}
+      - {click: commit_0, height: 80}
+      - {click: space, name: space, height: 80}
+      - {click: return, name: return, width: 17, height: 80, composing: confirm}
 
   number:
     #。？！…（））；、～:[]ï`#：+*/×
@@ -711,31 +711,31 @@ preset_keyboards:
     keys:
       #1
       # - {width: 1}
-      - {collection: ["=", "%", "-", "+", "×" , "/", ",", "#", ",", "?", ":", "*"], width: 17, height: 165, row_height: 39, row_vertical_gap: 3, show_row_back_image: false, name: table}
-      - {click: 1, height: 50}
-      - {click: 2, height: 50}
-      - {click: 3, height: 50}
-      - {click: backspace, width: 17, height: 50, name: backspace}
+      - {collection: ["=", "%", "-", "+", "×" , "/", ",", "#", ",", "?", ":", "*"], width: 17, height: 252, row_height: 39, row_vertical_gap: 3, show_row_back_image: false, name: table}
+      - {click: 1, height: 80}
+      - {click: 2, height: 80}
+      - {click: 3, height: 80}
+      - {click: backspace, width: 17, height: 80, name: backspace}
 
       # # #2
       - {width: 17}
-      - {click: 4, height: 50}
-      - {click: 5, height: 50}
-      - {click: 6, height: 50}
-      - {click: send_dot, width: 17, height: 50, name: dot}
+      - {click: 4, height: 80}
+      - {click: 5, height: 80}
+      - {click: 6, height: 80}
+      - {click: send_dot, width: 17, height: 80, name: dot}
 
       - {width: 17}
-      - {click: 7, height: 50}
-      - {click: 8, height: 50}
-      - {click: 9, height: 50}
-      - {click: commit_halfat, width: 17, height: 50, name: halfat}
+      - {click: 7, height: 80}
+      - {click: 8, height: 80}
+      - {click: 9, height: 80}
+      - {click: commit_halfat, width: 17, height: 80, name: halfat}
 
       # - {width: 1}
-      - {click: eisu_toggle_符_dotsymbols, width: 17, height: 44, name: default}
-      - {click: eisu_toggle_返回_default, width: 22, height: 44}
-      - {click: commit_0, height: 44}
-      - {click: space, name: space, height: 44}
-      - {click: return, name: return, width: 17, height: 44, composing: confirm}
+      - {click: eisu_toggle_符_dotsymbols, width: 17, height: 80, name: default}
+      - {click: eisu_toggle_返回_default, width: 22, height: 80}
+      - {click: commit_0, height: 80}
+      - {click: space, name: space, height: 80}
+      - {click: return, name: return, width: 17, height: 80, composing: confirm}
 
   symbols:
     #。？！…（））；、～:[]ï`#：+*/×

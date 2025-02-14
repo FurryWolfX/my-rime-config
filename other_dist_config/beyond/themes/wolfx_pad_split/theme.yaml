@@ -479,8 +479,8 @@ preset_color_schemas:
 preset_keyboards:
   default:
     ascii_mode: 0
-    height: 46
-    height_land: 46
+    height: 80
+    height_land: 80
     horizontal_gap: 6
     vertical_gap: 10
     round_corner: 6
@@ -501,17 +501,6 @@ preset_keyboards:
     menu: {spacing: 28, first_scrollable: false, last_scrollable: false, events: [eisu_toggle_setting, eisu_toggle_user_feedback, eisu_toggle_switch_setting, eisu_toggle_schema_setting, eisu_toggle_clip_board, eisu_toggle_search_clip_board, eisu_toggle_emoji, eisu_toggle_sound_board, eisu_toggle_haptics_board, eisu_toggle_dismiss_keyboard] }
 #现在只支持配置click,swipe_up,swipe_down键盘
     keys:
-      #0
-      - {click: 1, label: 1}
-      - {click: 2, label: 2}
-      - {click: 3, label: 3}
-      - {click: 4, label: 4}
-      - {click: 5, label: 5}
-      - {click: 6, label: 6}
-      - {click: 7, label: 7}
-      - {click: 8, label: 8}
-      - {click: 9, label: 9}
-      - {click: 0, label: 0}
       # 1
       - {click: q, label: Q, swipe_up: commit_1,  swipe_down: "一", long_click: [。, commit_1, commit_Q]}
       - {click: w, label: W, swipe_up: commit_2,  swipe_down: "二", long_click: [commit_2, commit_W, commit_w]}
@@ -557,7 +546,7 @@ preset_keyboards:
     width: 10
   default_land:
     ascii_mode: 0
-    height: 46
+    height: 80
     horizontal_gap: 6
     vertical_gap: 10
     round_corner: 6
@@ -789,36 +778,36 @@ preset_keyboards:
     vertical_gap: 7.5
     name: number_keyboard
     preview: false
-    height: 46
+    height: 80
     width: 22
     keys:
       #1
       # - {width: 1}
-      - {collection: ["=", "%", "-", "+", "×" , "/", ",", "#", ",", "?", ":", "*"], width: 17, height: 208, row_height: 50, row_vertical_gap: 3, show_row_back_image: false, name: table}
-      - {click: 1, height: 64}
-      - {click: 2, height: 64}
-      - {click: 3, height: 64}
-      - {click: backspace, width: 17, height: 64, name: backspace}
+      - {collection: ["=", "%", "-", "+", "×" , "/", ",", "#", ",", "?", ":", "*"], width: 17, height: 252, row_height: 39, row_vertical_gap: 3, show_row_back_image: false, name: table}
+      - {click: 1, height: 80}
+      - {click: 2, height: 80}
+      - {click: 3, height: 80}
+      - {click: backspace, width: 17, height: 80, name: backspace}
 
       # # #2
       - {width: 17}
-      - {click: 4, height: 64}
-      - {click: 5, height: 64}
-      - {click: 6, height: 64}
-      - {click: send_dot, width: 17, height: 64, name: dot}
+      - {click: 4, height: 80}
+      - {click: 5, height: 80}
+      - {click: 6, height: 80}
+      - {click: send_dot, width: 17, height: 80, name: dot}
 
       - {width: 17}
-      - {click: 7, height: 64}
-      - {click: 8, height: 64}
-      - {click: 9, height: 64}
-      - {click: commit_halfat, width: 17, height: 64, name: halfat}
+      - {click: 7, height: 80}
+      - {click: 8, height: 80}
+      - {click: 9, height: 80}
+      - {click: commit_halfat, width: 17, height: 80, name: halfat}
 
       # - {width: 1}
-      - {click: eisu_toggle_符_dotsymbols, width: 17, height: 58, name: default}
-      - {click: eisu_toggle_返回_default, width: 22, height: 58}
-      - {click: commit_0, height: 58}
-      - {click: space, name: space, height: 58}
-      - {click: return, name: return, width: 17, height: 58, composing: confirm}
+      - {click: eisu_toggle_符_dotsymbols, width: 17, height: 80, name: default}
+      - {click: eisu_toggle_返回_default, width: 22, height: 80}
+      - {click: commit_0, height: 80}
+      - {click: space, name: space, height: 80}
+      - {click: return, name: return, width: 17, height: 80, composing: confirm}
 
   symbols:
     #。？！…（））；、～:[]ï`#：+*/×
