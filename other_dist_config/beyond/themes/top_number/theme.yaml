@@ -480,7 +480,7 @@ preset_keyboards:
   default:
     ascii_mode: 0
     height: 46
-    height_land: 46
+    height_land: 30
     horizontal_gap: 6
     vertical_gap: 10
     round_corner: 6
@@ -501,6 +501,17 @@ preset_keyboards:
     menu: {spacing: 28, first_scrollable: false, last_scrollable: false, events: [eisu_toggle_setting, eisu_toggle_user_feedback, eisu_toggle_switch_setting, eisu_toggle_schema_setting, eisu_toggle_clip_board, eisu_toggle_search_clip_board, eisu_toggle_emoji, eisu_toggle_sound_board, eisu_toggle_haptics_board, eisu_toggle_dismiss_keyboard] }
 #现在只支持配置click,swipe_up,swipe_down键盘
     keys:
+      #0
+      - {click: 1, label: 1}
+      - {click: 2, label: 2}
+      - {click: 3, label: 3}
+      - {click: 4, label: 4}
+      - {click: 5, label: 5}
+      - {click: 6, label: 6}
+      - {click: 7, label: 7}
+      - {click: 8, label: 8}
+      - {click: 9, label: 9}
+      - {click: 0, label: 0}
       # 1
       - {click: q, label: Q, swipe_up: commit_1,  swipe_down: "一", long_click: [。, commit_1, commit_Q]}
       - {click: w, label: W, swipe_up: commit_2,  swipe_down: "二", long_click: [commit_2, commit_W, commit_w]}
@@ -538,15 +549,17 @@ preset_keyboards:
       - {click: backspace, width: 13, name: backspace, preview: false}
       #4
       - {click: eisu_toggle_符_symbols, width: 14, name: symbol, preview: false}
-      - {click: ',', label: ',', width: 10}
-      - {click: eisu_toggle_ABC_english, has_menu: text_halfcomma, width: 11, name: english, preview: false}
-      - {click: space, width: 28, name: space, swipe_up: send_2, preview: false}
       - {click: eisu_toggle_123_number, has_menu: text_halfperiod, width: 13, name: number, preview: false}
+      # - {width: 0.5}
+      - {click: space, width: 38, name: space, swipe_up: send_2, preview: false}
+      - {click: eisu_toggle_ABC_english, has_menu: text_halfcomma, width: 11, name: english, preview: false}
+#      - {click: eisu_toggle_ABC_english_schema_easy_en, has_menu: text_halfcomma, width: 11, name: english, preview: false}
+      # - {click: mode_switch_cn_or_en, has_menu: text_halfcomma, width: 11, name: mode_switch_cn_or_en, preview: false}
       - {click: return, width: 23, name: return, swipe_up: send_3, composing: confirm, long_click: next, rect_preview: true, preview: false}
     width: 10
   default_land:
     ascii_mode: 0
-    height: 46
+    height: 30
     horizontal_gap: 6
     vertical_gap: 10
     round_corner: 6
@@ -567,6 +580,17 @@ preset_keyboards:
     menu: { spacing: 28, first_scrollable: false, last_scrollable: false, events: [ eisu_toggle_setting, eisu_toggle_user_feedback, eisu_toggle_switch_setting, eisu_toggle_schema_setting, eisu_toggle_clip_board, eisu_toggle_search_clip_board, eisu_toggle_emoji, eisu_toggle_sound_board, eisu_toggle_haptics_board, eisu_toggle_dismiss_keyboard ] }
     #现在只支持配置click,swipe_up,swipe_down键盘
     keys:
+      #0
+      - {click: 1, label: 1}
+      - {click: 2, label: 2}
+      - {click: 3, label: 3}
+      - {click: 4, label: 4}
+      - {click: 5, label: 5}
+      - {click: 6, label: 6}
+      - {click: 7, label: 7}
+      - {click: 8, label: 8}
+      - {click: 9, label: 9}
+      - {click: 0, label: 0}
       # 1
       - { click: q, label: Q, swipe_up: commit_1,  swipe_down: "一", long_click: [ 。, commit_1, commit_Q, commit_e ] }
       - { click: w, label: W, swipe_up: commit_2,  swipe_down: "二", long_click: [ commit_2, commit_W, commit_w ] }
@@ -603,12 +627,14 @@ preset_keyboards:
       - { width: 2 }
       - { click: backspace, width: 13, name: backspace, preview: false }
       #4
-      - {click: eisu_toggle_符_symbols, width: 14, name: symbol, preview: false}
-      - {click: ',', label: ',', width: 10}
-      - {click: eisu_toggle_ABC_english, has_menu: text_halfcomma, width: 11, name: english, preview: false}
-      - {click: space, width: 31, name: space, swipe_up: send_2, preview: false}
-      - {click: eisu_toggle_123_number, has_menu: text_halfperiod, width: 10, name: number, preview: false}
-      - {click: return, width: 23, name: return, swipe_up: send_3, composing: confirm, long_click: next, rect_preview: true, preview: false}
+      - { click: eisu_toggle_符_symbols, width: 14, name: symbol, preview: false }
+      - { click: eisu_toggle_123_number, has_menu: text_halfperiod, width: 13, name: number, preview: false }
+      # - {width: 0.5}
+      - { click: space, width: 38, name: space, swipe_up: send_2, preview: false }
+      - { click: eisu_toggle_ABC_english, has_menu: text_halfcomma, width: 11, name: english, preview: false }
+      #      - {click: eisu_toggle_ABC_english_schema_easy_en, has_menu: text_halfcomma, width: 11, name: english, preview: false}
+      # - {click: mode_switch_cn_or_en, has_menu: text_halfcomma, width: 11, name: mode_switch_cn_or_en, preview: false}
+      - { click: return, width: 23, name: return, swipe_up: send_3, composing: confirm, long_click: next, rect_preview: true, preview: false }
     width: 10
 
 
@@ -617,6 +643,17 @@ preset_keyboards:
     ascii_mode: 1
     name: english_keyboard
     keys:
+      #0
+      - {click: 1, label: 1}
+      - {click: 2, label: 2}
+      - {click: 3, label: 3}
+      - {click: 4, label: 4}
+      - {click: 5, label: 5}
+      - {click: 6, label: 6}
+      - {click: 7, label: 7}
+      - {click: 8, label: 8}
+      - {click: 9, label: 9}
+      - {click: 0, label: 0}
       #1
       - {click: q, swipe_up: commit_1, long_click: [1, Q, q]}
       - {click: w, swipe_up: commit_2, long_click: [2, W, w]}
@@ -654,10 +691,11 @@ preset_keyboards:
       - {click: backspace, width: 13, name: backspace}
       #4
       - {click: eisu_toggle_符_symbols, width: 14, name: symbol}
-      - {click: send_dot, width: 10 }
-      - {click: eisu_toggle_返回_default_schema_default, width: 11, name: english, preview: false}
-      - {click: space, width: 31, name: space}
       - {click: eisu_toggle_123_number, width: 10, name: number}
+      - {click: send_dot, width: 10 }
+      - {click: space, width: 31, name: space}
+      #- {click: eisu_toggle_返回_default, width: 11, name: english}
+      - {click: eisu_toggle_返回_default_schema_default, width: 11, name: english, preview: false}
       - {click: return, width: 23, name: return, composing: confirm}
   number_land:
     #。？！…（））；、～:[]ï`#：+*/×
@@ -711,38 +749,38 @@ preset_keyboards:
     keys:
       #1
       # - {width: 1}
-      - {collection: ["=", "%", "-", "+", "×" , "/", ",", "#", ",", "?", ":", "*"], width: 17, height: 165, row_height: 39, row_vertical_gap: 3, show_row_back_image: false, name: table}
-      - {click: 1, height: 50}
-      - {click: 2, height: 50}
-      - {click: 3, height: 50}
-      - {click: backspace, width: 17, height: 50, name: backspace}
+      - {collection: ["=", "%", "-", "+", "×" , "/", ",", "#", ",", "?", ":", "*"], width: 17, height: 208, row_height: 50, row_vertical_gap: 3, show_row_back_image: false, name: table}
+      - {click: 1, height: 64}
+      - {click: 2, height: 64}
+      - {click: 3, height: 64}
+      - {click: backspace, width: 17, height: 64, name: backspace}
 
       # # #2
       - {width: 17}
-      - {click: 4, height: 50}
-      - {click: 5, height: 50}
-      - {click: 6, height: 50}
-      - {click: send_dot, width: 17, height: 50, name: dot}
+      - {click: 4, height: 64}
+      - {click: 5, height: 64}
+      - {click: 6, height: 64}
+      - {click: send_dot, width: 17, height: 64, name: dot}
 
       - {width: 17}
-      - {click: 7, height: 50}
-      - {click: 8, height: 50}
-      - {click: 9, height: 50}
-      - {click: commit_halfat, width: 17, height: 50, name: halfat}
+      - {click: 7, height: 64}
+      - {click: 8, height: 64}
+      - {click: 9, height: 64}
+      - {click: commit_halfat, width: 17, height: 64, name: halfat}
 
       # - {width: 1}
-      - {click: eisu_toggle_符_dotsymbols, width: 17, height: 44, name: default}
-      - {click: eisu_toggle_返回_default, width: 22, height: 44}
-      - {click: commit_0, height: 44}
-      - {click: space, name: space, height: 44}
-      - {click: return, name: return, width: 17, height: 44, composing: confirm}
+      - {click: eisu_toggle_符_dotsymbols, width: 17, height: 58, name: default}
+      - {click: eisu_toggle_返回_default, width: 22, height: 58}
+      - {click: commit_0, height: 58}
+      - {click: space, name: space, height: 58}
+      - {click: return, name: return, width: 17, height: 58, composing: confirm}
 
   symbols:
     #。？！…（））；、～:[]ï`#：+*/×
     menu: {events: [text_fullperiod_default, text_fullquestionmark_default, text_fullpoint_default, text_halfellipsis_default, text_halfbracket_left_default, text_halfbracket_default, text_fullsemicolon_default, text_fulldun_default, text_fulltilde_default, text_fullcolon_default, text_fullsquarebracketleft2_left_default, text_fullsquarebracketright2_default, text_fullsmile_default, text_fullcomma2_default, text_halfpoundsign_default, text_halfcolon_default, "%", "-", "+", "×", "="]}
     ascii_mode: 0
     keys:
-    #1
+      #1
       - {click: 1, long_click: ["1", "一", "壹", "１", "①", "⑴", "⒈", "❶", "㊀", "㈠"]}
       - {click: 2, long_click: ["2", "二", "贰", "２", "②", "⑵", "⒉", "❷", "㊁", "㈡"]}
       - {click: 3, long_click: ["3", "三", "肆", "４", "④", "⑷", "⒋", "❹", "㊃", "㈣"]}
@@ -753,8 +791,20 @@ preset_keyboards:
       - {click: 8, long_click: ["8", "八", "捌", "８", "⑧", "⑻", "⒏", "❽", "㊇", "㈧"]}
       - {click: 9, long_click: ["9", "九", "玖", "９", "⑨", "⑼", "⒐", "❾", "㊈", "㈨"]}
       - {click: 0, long_click: ["0", "零", "０", "⓪", "°"]}
+      #0
+      - {click: '%', label: '%'}
+      - {click: '&', label: '&'}
+      - {click: ',', label: ','}
+      - {click: '……', label: '……'}
+      - {click: '「', label: '「'}
+      - {click: '」', label: '」'}
+      - {click: '\', label: '\'}
+      - {click: '[', label: '['}
+      - {click: ']', label: ']'}
+      - {click: '￥', label: '￥'}
       - {width: 5}
       #2
+
       #c:~
       - {click: commit_half_tilde_no_functional, long_click: ["～", "~"]}
       - {click: "/", long_click: ["/", "／", "|", "｜", "＼", "\\"]}

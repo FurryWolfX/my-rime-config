@@ -480,7 +480,7 @@ preset_keyboards:
   default:
     ascii_mode: 0
     height: 46
-    height_land: 46
+    height_land: 30
     horizontal_gap: 6
     vertical_gap: 10
     round_corner: 6
@@ -538,15 +538,17 @@ preset_keyboards:
       - {click: backspace, width: 13, name: backspace, preview: false}
       #4
       - {click: eisu_toggle_符_symbols, width: 14, name: symbol, preview: false}
-      - {click: ',', label: ',', width: 10}
-      - {click: eisu_toggle_ABC_english, has_menu: text_halfcomma, width: 11, name: english, preview: false}
-      - {click: space, width: 28, name: space, swipe_up: send_2, preview: false}
       - {click: eisu_toggle_123_number, has_menu: text_halfperiod, width: 13, name: number, preview: false}
+      # - {width: 0.5}
+      - {click: space, width: 38, name: space, swipe_up: send_2, preview: false}
+      - {click: eisu_toggle_ABC_english, has_menu: text_halfcomma, width: 11, name: english, preview: false}
+#      - {click: eisu_toggle_ABC_english_schema_easy_en, has_menu: text_halfcomma, width: 11, name: english, preview: false}
+      # - {click: mode_switch_cn_or_en, has_menu: text_halfcomma, width: 11, name: mode_switch_cn_or_en, preview: false}
       - {click: return, width: 23, name: return, swipe_up: send_3, composing: confirm, long_click: next, rect_preview: true, preview: false}
     width: 10
   default_land:
     ascii_mode: 0
-    height: 46
+    height: 30
     horizontal_gap: 6
     vertical_gap: 10
     round_corner: 6
@@ -603,12 +605,14 @@ preset_keyboards:
       - { width: 2 }
       - { click: backspace, width: 13, name: backspace, preview: false }
       #4
-      - {click: eisu_toggle_符_symbols, width: 14, name: symbol, preview: false}
-      - {click: ',', label: ',', width: 10}
-      - {click: eisu_toggle_ABC_english, has_menu: text_halfcomma, width: 11, name: english, preview: false}
-      - {click: space, width: 31, name: space, swipe_up: send_2, preview: false}
-      - {click: eisu_toggle_123_number, has_menu: text_halfperiod, width: 10, name: number, preview: false}
-      - {click: return, width: 23, name: return, swipe_up: send_3, composing: confirm, long_click: next, rect_preview: true, preview: false}
+      - { click: eisu_toggle_符_symbols, width: 14, name: symbol, preview: false }
+      - { click: eisu_toggle_123_number, has_menu: text_halfperiod, width: 13, name: number, preview: false }
+      # - {width: 0.5}
+      - { click: space, width: 38, name: space, swipe_up: send_2, preview: false }
+      - { click: eisu_toggle_ABC_english, has_menu: text_halfcomma, width: 11, name: english, preview: false }
+      #      - {click: eisu_toggle_ABC_english_schema_easy_en, has_menu: text_halfcomma, width: 11, name: english, preview: false}
+      # - {click: mode_switch_cn_or_en, has_menu: text_halfcomma, width: 11, name: mode_switch_cn_or_en, preview: false}
+      - { click: return, width: 23, name: return, swipe_up: send_3, composing: confirm, long_click: next, rect_preview: true, preview: false }
     width: 10
 
 
@@ -654,10 +658,11 @@ preset_keyboards:
       - {click: backspace, width: 13, name: backspace}
       #4
       - {click: eisu_toggle_符_symbols, width: 14, name: symbol}
-      - {click: send_dot, width: 10 }
-      - {click: eisu_toggle_返回_default_schema_default, width: 11, name: english, preview: false}
-      - {click: space, width: 31, name: space}
       - {click: eisu_toggle_123_number, width: 10, name: number}
+      - {click: send_dot, width: 10 }
+      - {click: space, width: 31, name: space}
+      #- {click: eisu_toggle_返回_default, width: 11, name: english}
+      - {click: eisu_toggle_返回_default_schema_default, width: 11, name: english, preview: false}
       - {click: return, width: 23, name: return, composing: confirm}
   number_land:
     #。？！…（））；、～:[]ï`#：+*/×
