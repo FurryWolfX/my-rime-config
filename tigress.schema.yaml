@@ -56,9 +56,10 @@ engine:
     - charset_filter@gbk
     - charset_filter@utf8
     - charset_filter@gb2312
+    - simplifier@chaifen #拆分滤镜
     - simplifier@emoji #表情滤镜
     - uniquifier
-#    - reverse_lookup_filter@reverse_lookup
+
 
 speller:
   auto_clear: max_length
@@ -135,3 +136,16 @@ easy_en:
   comment_format: #去掉编码提示前的~号
     - "xform/~/ /"
 
+# 拆分滤镜
+chaifen:
+  opencc_config: hu_cf.json
+  option_name: chaifen
+  show_in_comment: true 
+  comment_format:     
+    - "xform/&nbsp;/ /"
+  tags:     
+    - abc
+    - tiger
+    - tigress
+    - reverse_lookup
+  tips: all #如只想给单字加滤镜，可改为 char
