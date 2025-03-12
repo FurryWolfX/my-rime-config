@@ -3,7 +3,6 @@ schema:
     - {}
   dependencies:
     - clover
-    - easy_en
   name: "虎码2023"
   schema_id: tigress
   version: 0.9
@@ -42,7 +41,6 @@ engine:
   segmentors:
     - ascii_segmentor
     - matcher
-    - affix_segmentor@easy_english #英文相关
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
@@ -50,7 +48,6 @@ engine:
     - punct_translator
     - reverse_lookup_translator
     - table_translator
-    - table_translator@easy_en #临时英文
   filters:
 #    - simplifier
     - charset_filter@gbk
@@ -71,10 +68,13 @@ translator:
   dictionary: tigress
   enable_charset_filter: false
   enable_encoder: true
-  enable_sentence: false
+  enable_sentence: true
   encode_commit_history: true
-  max_phrase_length: 4
-  enable_user_dict: false
+  max_phrase_length: 10
+  enable_user_dict: true
+  disable_user_dict_for_patterns:
+    - ^[a-z]{1,3}$
+  initial_quality: 1
 
 reverse_lookup:
   dictionary: clover
@@ -100,9 +100,10 @@ key_binder:
 recognizer:
   import_preset: default
   patterns:
-    punct: '^/([0-9]0?|[A-Za-z]+)$'
+    punct: "^/([0-9]0?|[A-Za-z]+)$"
+    uppercase: "" #中文状态大写锁定直接上屏
     reverse_lookup: "^`[a-z]*'?$"
-    easy_en: "^'[A-Z|a-z]*`?$"
+    expression: "^=.*$"
 
 ascii_composer:
   switch_key:
@@ -122,19 +123,6 @@ emoji:
   opencc_config: emoji.json
   option_name: emoji
 
-# 临时英文
-easy_en:
-  dictionary: easy_en
-  tag: easy_en
-  prefix: "'"
-  tips: 〔En〕
-  enable_completion: true
-  enable_sentence: false
-  initial_quality: -1
-  preedit_format:
-    - "xlit|_| |"
-  comment_format: #去掉编码提示前的~号
-    - "xform/~/ /"
 
 # 拆分滤镜
 chaifen:
