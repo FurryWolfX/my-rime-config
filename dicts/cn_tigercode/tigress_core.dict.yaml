@@ -1,4 +1,4 @@
-name: tigress
+name: tigress_core
 version: "2023.11.09"
 sort: by_weight
 columns:
