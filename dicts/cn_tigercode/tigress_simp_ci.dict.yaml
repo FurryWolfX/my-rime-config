@@ -15,8 +15,8 @@ encoder:
       formula: "AaBaCaCb"
     - length_in_range: [4, 99]
       formula: "AaBaCaZa"
-
 ...
+
 那个	5000	a
 那里	4900	a
 那些	4800	a

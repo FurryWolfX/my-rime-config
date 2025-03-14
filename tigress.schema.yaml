@@ -20,10 +20,11 @@ switches:
   - name: full_shape
     reset: 0
     states: [ 半角, 全角 ]
-  - options: [ gbk, gb2312, utf8 ]
-    states:	 
-    - GBK
+  - options: [ gb2312, gbk, utf8 ]
+    reset: 0     
+    states:
     - GB2312
+    - GBK
     - UTF-8
 
 
@@ -49,10 +50,10 @@ engine:
     - reverse_lookup_translator
     - table_translator
   filters:
-#    - simplifier
+    - simplifier
+    - charset_filter@gb2312
     - charset_filter@gbk
     - charset_filter@utf8
-    - charset_filter@gb2312
     - simplifier@chaifen #拆分滤镜
     - simplifier@emoji #表情滤镜
     - uniquifier

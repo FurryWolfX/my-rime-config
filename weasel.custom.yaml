@@ -1,3 +1,6 @@
 patch:
   "style/font_point": 16
   "style/font_face": "Segoe UI Emoji"
+  "style/comment_font_point": 12
+  "style/comment_font_face": "TumanPUA"
+

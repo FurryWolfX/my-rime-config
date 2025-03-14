@@ -15,8 +15,8 @@ encoder:
       formula: "AaBaCaCb"
     - length_in_range: [4, 99]
       formula: "AaBaCaZa"
-
 ...
+
 我们	116006	tuja
 自己	109686	oivj
 一个	105148	fijg
