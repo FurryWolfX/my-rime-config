@@ -12,7 +12,7 @@ switches:
     reset: 0
     states: [ 中文, 西文 ]
   - name: emoji #emoji滤镜
-    reset: 1
+    reset: 0
     states: [ 🈚, 🈶 ]
   - name: chaifen #拆分
     reset: 1 
