@@ -49,6 +49,7 @@ engine:
     - punct_translator
     - reverse_lookup_translator
     - table_translator
+    - lua_translator@*force_gc
   filters:
     - simplifier
     - charset_filter@gb2312

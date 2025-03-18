@@ -50,6 +50,7 @@ engine:
     - table_translator@custom_phrase
     - table_translator
     - script_translator@clover
+    - lua_translator@*force_gc
   filters:
     - simplifier@tradition
     - uniquifier
