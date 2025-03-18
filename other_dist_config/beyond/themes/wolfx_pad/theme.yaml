@@ -3,7 +3,7 @@
 
 version: "5.0"
 name: iRime 5 #方案名
-author: 筋斗云 #作者
+author: wolfx #作者
 
 #style，preset_styles，preset_font，preset_candidates，preset_color_schemas，preset_keyboards 下的default键名是个公共的配置，没有填的话都从default里面取。
 style:
@@ -57,8 +57,10 @@ preset_styles:
 preset_fonts:
   default:
     candidate_text_size: 22
-    text_size: 10
-    comment_text_size: 12
+    text_size: 16
+    #TODO
+    comment_font: "TumanPUA"
+    comment_text_size: 10
     key_text_size: 20 #键字号
     key_upper_text_size: 8 #符号字号
     key_long_text_size: 14 #长标籤字号
@@ -527,7 +529,7 @@ preset_keyboards:
       #3
       - {click: shift, has_menu: text_delimiter, width: 13, name: shift, preview: false}
       - {width: 2}
-      - {click: z, label: Z, swipe_up: commit_halfminus,  swipe_down: "-", long_click: [commit_halfminus, commit_Z, commit_z]}
+      - {click: z, label: Z, swipe_up: commit_halfminus,  swipe_down: "`", long_click: [commit_halfminus, commit_Z, commit_z]}
       - {click: x, label: X, swipe_up: commit_halfunderline,  swipe_down: "_", long_click: [commit_halfunderline, commit_X, commit_x]}
       - {click: c, label: C, swipe_up: commit_halfpoundsign,  swipe_down: "#", long_click: [commit_halfpoundsign, commit_C, commit_c]}
       - {click: v, label: V, swipe_up: commit_fullquestionmark,  swipe_down: "?", long_click: [commit_fullquestionmark, commit_V, commit_v]}
@@ -540,8 +542,8 @@ preset_keyboards:
       - {click: eisu_toggle_符_symbols, width: 14, name: symbol, preview: false}
       - {click: ',', label: ',', width: 10}
       - {click: eisu_toggle_ABC_english, has_menu: text_halfcomma, width: 11, name: english, preview: false}
-      - {click: space, width: 28, name: space, swipe_up: send_2, preview: false}
-      - {click: eisu_toggle_123_number, has_menu: text_halfperiod, width: 13, name: number, preview: false}
+      - {click: space, width: 31, name: space, swipe_up: send_2, preview: false}
+      - {click: eisu_toggle_123_number, has_menu: text_halfperiod, width: 10, name: number, preview: false}
       - {click: return, width: 23, name: return, swipe_up: send_3, composing: confirm, long_click: next, rect_preview: true, preview: false}
     width: 10
   default_land:
@@ -593,7 +595,7 @@ preset_keyboards:
       #3
       - { click: shift, has_menu: text_delimiter, width: 13, name: shift, preview: false }
       - { width: 2 }
-      - { click: z, label: Z, swipe_up: commit_halfminus,  swipe_down: "-", long_click: [ commit_halfminus, commit_Z, commit_z ] }
+      - { click: z, label: Z, swipe_up: commit_halfminus,  swipe_down: "`", long_click: [ commit_halfminus, commit_Z, commit_z ] }
       - { click: x, label: X, swipe_up: commit_halfunderline,  swipe_down: "_", long_click: [ commit_halfunderline, commit_X, commit_x ] }
       - { click: c, label: C, swipe_up: commit_halfpoundsign,  swipe_down: "#", long_click: [ commit_halfpoundsign, commit_C, commit_c ] }
       - { click: v, label: V, swipe_up: commit_fullquestionmark,  swipe_down: "?", long_click: [ commit_fullquestionmark, commit_V, commit_v ] }
@@ -654,7 +656,7 @@ preset_keyboards:
       - {click: backspace, width: 13, name: backspace}
       #4
       - {click: eisu_toggle_符_symbols, width: 14, name: symbol}
-      - {click: send_dot, width: 10 }
+      - {click: ',', label: ',', width: 10}
       - {click: eisu_toggle_返回_default_schema_default, width: 11, name: english, preview: false}
       - {click: space, width: 31, name: space}
       - {click: eisu_toggle_123_number, width: 10, name: number}
