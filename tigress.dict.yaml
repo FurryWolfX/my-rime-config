@@ -16,7 +16,7 @@ encoder:
       formula: "AaBaCaZa"
 import_tables:
   - dicts/cn_tigercode/tigress_core
-  # - dicts/cn_tigercode/tigress_ext
+  - dicts/cn_tigercode/tigress_ext
   - dicts/cn_tigercode/tigress_ci
   - dicts/cn_tigercode/tigress_simp_ci
 ...

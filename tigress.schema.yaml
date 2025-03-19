@@ -61,19 +61,19 @@ engine:
 
 
 speller:
-  auto_clear: max_length
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
   auto_select: true
-  max_code_length: 4
 
 
 translator:
   dictionary: tigress
-  enable_charset_filter: false
+  enable_charset_filter: true
   enable_encoder: true
   enable_sentence: true
   encode_commit_history: true
-  max_phrase_length: 10
   enable_user_dict: true
+  sentence_over_completion: true
   disable_user_dict_for_patterns:
     - ^[a-z]{1,3}$
   initial_quality: 1
