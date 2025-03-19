@@ -75,7 +75,7 @@ translator:
   enable_user_dict: true
   sentence_over_completion: true
   disable_user_dict_for_patterns:
-    - ^[a-z]{1,3}$
+    - ^[a-z]$
   initial_quality: 1
 
 reverse_lookup:
