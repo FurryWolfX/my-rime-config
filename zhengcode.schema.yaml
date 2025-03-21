@@ -12,7 +12,7 @@ schema:
   description: 大字符集郑码
     按 ` 进行拼音反查
   dependencies:
-    - clover
+    - pinyin_simp
 
 switches:
   - name: ascii_mode
@@ -41,7 +41,7 @@ engine:
   segmentors:
     - ascii_segmentor
     - matcher
-    - affix_segmentor@clover
+    - affix_segmentor@pinyin_simp
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
@@ -49,7 +49,7 @@ engine:
     - punct_translator
     - table_translator@custom_phrase
     - table_translator
-    - script_translator@clover
+    - script_translator@pinyin_simp
     - lua_translator@*force_gc
   filters:
     - simplifier@tradition
@@ -88,9 +88,9 @@ custom_phrase:
   enable_completion: false
   initial_quality: 1
 
-clover:
-  tag: clover
-  dictionary: clover
+pinyin_simp:
+  tag: pinyin_simp
+  dictionary: pinyin_simp
   prefix: "`"
   suffix: ";"
   tips: "[拼音]"
@@ -106,7 +106,7 @@ tradition:
   tips: all
 
 zhengcode_lookup:
-  tags: [abc, clover]
+  tags: [abc, pinyin_simp]
   dictionary: zhengcode
   overwrite_comment: false
   comment_format:
@@ -180,4 +180,4 @@ recognizer:
   import_preset: default
   patterns:
     punct: "^/[0-9]*[a-z]*$"
-    clover: "`[a-z']*;?$"
+    pinyin_simp: "`[a-z']*;?$"

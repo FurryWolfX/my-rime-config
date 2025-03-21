@@ -2,7 +2,7 @@ schema:
   author:
     - {}
   dependencies:
-    - clover
+    - pinyin_simp
   name: "虎码2023"
   schema_id: tigress
   version: 0.9
@@ -79,7 +79,7 @@ translator:
   initial_quality: 1
 
 reverse_lookup:
-  dictionary: clover
+  dictionary: pinyin_simp
   preedit_format:
     - "xform/([nl])v/$1ü/"
     - "xform/([nl])ue/$1üe/"

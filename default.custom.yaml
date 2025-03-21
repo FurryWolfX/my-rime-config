@@ -8,8 +8,7 @@ patch:
   menu:
     page_size: 5
   schema_list:
-    - { schema: zrm2000_clover }
+    - { schema: moqi_wan_zrm }
     - { schema: tigress }
     - { schema: zhengcode }
-    - { schema: clover }
     - { schema: easy_en }
