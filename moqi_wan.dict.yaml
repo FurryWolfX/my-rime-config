@@ -18,7 +18,7 @@ use_preset_vocabulary: false
 import_tables:
   ## 转换自 https://github.com/gaboolic/rime-frost
   - dicts/cn_mq_zrm/cn_dicts/8105     # 字表
-  - dicts/cn_mq_zrm/cn_dicts/41448     # 4万字大字表 可以关闭
+  # - dicts/cn_mq_zrm/cn_dicts/41448     # 4万字大字表 可以关闭
   
   - dicts/cn_mq_zrm/cn_dicts/base     # 基础词库
   - dicts/cn_mq_zrm/cn_dicts/ext      # 扩展词库
