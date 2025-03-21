@@ -61,8 +61,8 @@ aux_patch:
     __include: moqi_speller.yaml:/common_aux
 
 __patch:
-  add_user_dict/dictionary: moqi_wan.extended
-  user_dict_set/dictionary: moqi_wan.extended
+  add_user_dict/dictionary: moqi_wan
+  user_dict_set/dictionary: moqi_wan
   translator/prism: moqi_wan_zrm
   user_dict_set/prism: moqi_wan_zrm
   add_user_dict/prism: moqi_wan_zrm

@@ -35,7 +35,6 @@ switches_engine:
        # lua翻译器
       - lua_translator@*date_translator    # 时间、日期、星期
       - lua_translator@*lunar              # 农历
-      - lua_translator@*unicode            # Unicode
       - lua_translator@*number_translator  # 数字、金额大写
       - lua_translator@*calculator    # 计算器
       - punct_translator
