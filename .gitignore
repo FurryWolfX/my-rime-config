@@ -7,3 +7,4 @@
 .DS_Store
 /installation.yaml
 /user.yaml
+*.user.custom.dict.txt

@@ -77,6 +77,8 @@ translator:
   disable_user_dict_for_patterns:
     - ^[a-z]$
   initial_quality: 1
+  user_dict: tigress.user.custom.dict
+  db_class: tabledb
 
 reverse_lookup:
   dictionary: pinyin_simp
