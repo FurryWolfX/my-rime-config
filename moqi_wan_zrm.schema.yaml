@@ -61,11 +61,7 @@ aux_patch:
     __include: moqi_speller.yaml:/common_aux
 
 __patch:
-  add_user_dict/dictionary: moqi_wan
-  user_dict_set/dictionary: moqi_wan
   translator/prism: moqi_wan_zrm
-  user_dict_set/prism: moqi_wan_zrm
-  add_user_dict/prism: moqi_wan_zrm
   speller/algebra/+:
     __include: aux_patch
 
@@ -87,6 +83,9 @@ key_binder:
     - { match: "[a-z]{1,3}", accept: "/",  send_sequence: "/1" }
     - { match: "[a-z]{1,3}", accept: ".",  send_sequence: "/1" }
     # - { when: composing, match: "[a-z]{2}", accept: Tab, send: '|' }
+
+    - { when: always, toggle: ascii_punct, accept: Control+Shift+3 }              # 切换中英标点 
+    - { when: always, toggle: ascii_punct, accept: Control+Shift+numbersign }     # 切换中英标点 
 
     ## 启用光标回退至特定音节后、补充辅助码的功能。补充完辅助码后，可以再按一次tab回到整句检查
     - { when: composing, accept: Control+1, send_sequence: '{Home}{Shift+Right}[' }

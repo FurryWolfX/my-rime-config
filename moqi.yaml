@@ -1,6 +1,7 @@
 switches_engine:  
   switches:
     - name: ascii_mode
+      reset: 0
       states: [ 中文, 西文 ]
     - name: full_shape
       states: [ 半角, 全角 ]
@@ -8,14 +9,13 @@ switches_engine:
       states: [ 简, 繁 ]
     - name: emoji
       states: [ 💀, 😄 ]
-    - name: ascii_punct
-      states: [ 。，, ．， ]
+
 
   engine:
     processors:
       - ascii_composer
       - recognizer
-      - lua_processor@*sbxlm.key_binder # 绑定按键
+      - lua_processor@*sbxlm.key_binder # 绑定按键,TAB上屏等
       - key_binder
       - speller
       - punctuator
@@ -27,14 +27,10 @@ switches_engine:
       - matcher
       - abc_segmentor
       - punct_segmentor
-      - affix_segmentor@emojis
-      - affix_segmentor@add_user_dict
-      - affix_segmentor@verbatim ## not as the last of this list
       - fallback_segmentor
     translators:
        # lua翻译器
       - lua_translator@*date_translator    # 时间、日期、星期
-      - lua_translator@*lunar              # 农历
       - lua_translator@*number_translator  # 数字、金额大写
       - lua_translator@*calculator    # 计算器
       - punct_translator
@@ -50,20 +46,12 @@ switches_engine:
       - table_translator@custom_phrase_super_4jian_no_conflict
       # 脚本翻译器，用于拼音、粤拼等基于音节表的输入方案
       - script_translator
-      - script_translator@user_dict_set
-      - script_translator@add_user_dict
       
     filters:
-      # lua的filter：
-      # - lua_filter@*laneChangeAndSpace_Filter   # 把<br>替换为换行
       - lua_filter@*pro_comment_format                #超级注释模块，支持错词错音提示、任意长度辅助码显示，支持个性化配置和关闭相应的功能，详情搜索pro_comment_format进行详细配置
       - lua_filter@*stick       #简码回显
       - lua_filter@*is_in_user_dict # 用户词典的词加上一个*
-      # - lua_filter@*moqi.jianma_show # 当用户用全码"womf"输入“我们”时，回显简码提示"wm"
-      # - lua_filter@*long_word_filter                       # 长词优先（顺序要求：长词优先 > Emoji）
-      # - lua_filter@*moran_debug_filter # debug
       - simplifier@emoji                              # Emoji
-      # - lua_filter@*reduce_emoji_filter   # 按需启用，作用是降低Emoji在候选项中的位置排序(顺序要求：Emoji > 降低排序)
       - simplifier@traditionalize                     # 简繁切换
       - uniquifier
 
@@ -155,21 +143,20 @@ opencc_config:
     option_name: traditionalization
     opencc_config: s2t.json  # s2t.json | s2hk.json | s2tw.json | s2twp.json
     tips: none               # 转换提示: all 都显示 | char 仅单字显示 | none 不显示。
-    tags: [ abc, number, gregorian_to_lunar ]  # 限制在对应 tag，不对其他如反查的内容做简繁转换
+    tags: [ abc, number ]  # 限制在对应 tag，不对其他如反查的内容做简繁转换
 
-    
 punctuator:
-  import_preset: default
+  punctuator:
+    import_preset: symbols
 
 guide:
   recognizer:
-    # import_preset: default
+    import_preset: default
     patterns:
+      email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+      url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
       uppercase: "^[A-Z].*$"
-      punct: '^/([0-9]|10|[A-z]+)$'
-      emojis: "^ae[a-z]*'?$" # "^ae.*$" 
       number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@number_translator，数字金额大写
-      gregorian_to_lunar: "^N[0-9]{1,8}"  # 脚本将自动获取第 2 个字符 N 作为触发前缀，响应 lua_translator@lunar，公历转农历，输入 N20240115 得到「二〇二三年腊月初五」
 
 
   # 计算器触发关键字
@@ -184,8 +171,6 @@ guide:
     datetime: datetime    # ISO 8601： 2022-11-29T18:13:11+08:00
     timestamp: timestamp  # 时间戳： 1669716794
 
-  # Lua 配置：农历的触发关键字
-  lunar: anl  # 农历： 二〇二三年冬月二十 癸卯年（兔）冬月二十
   # Lua 配置：长词优先
   # 提升 count 个词语，插入到第 idx 个位置。
   # 示例：将 2 个词插入到第 1  个候选项，输入 总算 得到「1总算 2纵」
