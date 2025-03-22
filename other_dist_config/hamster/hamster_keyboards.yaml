@@ -1,0 +1,269 @@
+keyboards:
+  - name: "异形26键"
+    isPrimary: true
+    buttonInsets: { left: 2, bottom: 2, top: 2, right: 2 } # 间距
+    rows:
+      - keys:
+          - action: { keyboardType: classifySymbolic }
+            width: { percentage: 0.125 } 
+
+          - action: shift
+            width:
+              portrait: { percentage: 0.125 }
+              landscape: { percentage: 0.125 }
+            swipe:
+              - action: { shortcutCommand: { sendKeys: { keys: "Tab" } } }
+                label: ⇥
+                display: true
+                processByRIME: true
+                direction: up
+              - action: { shortcutCommand: { sendKeys: { keys: "Tab" } } }
+                label: ⇥
+                display: false
+                processByRIME: true
+                direction: down
+
+          - action: { character: { char: "`" } }
+            width: { percentage: 0.125 }
+            processByRIME: true
+            label: "反"
+
+          - action: { character: { char: "t" } }
+            width: { percentage: 0.125 }
+            label: "T"
+            swipe:
+              - direction: up
+                action: { character: { char: "5" } }
+                display: true
+          - action: { character: { char: "y" } }
+            width: { percentage: 0.125 }
+            label: "Y"
+            swipe:
+              - direction: up
+                action: { character: { char: "6" } }
+                display: true
+          - action: { character: { char: "'" } }
+            width: { percentage: 0.125 }
+            processByRIME: true
+            label: "分"
+          - action: backspace
+            width: 0.25
+            swipe:
+              - direction: up
+                action: { shortcutCommand: "#重输" }  
+
+
+      - keys:
+          - action: { character: { char: q } }
+            width: { percentage: 0.125 }
+            label: "Q"
+            swipe:
+              - direction: up
+                action: { character: { char: "1" } }
+                display: true
+          - action: { character: { char: w } }
+            width: { percentage: 0.125 }
+            label: "W"
+            swipe:
+              - direction: up
+                action: { character: { char: "2" } }
+                display: true
+          - action: { character: { char: e } }
+            width: { percentage: 0.125 }
+            label: "E"
+            swipe:
+              - direction: up
+                action: { character: { char: "3" } }
+                display: true
+          - action: { character: { char: "r" } }
+            width: { percentage: 0.125 }
+            label: "R"
+            swipe:
+              - direction: up
+                action: { character: { char: "4" } }
+                display: true
+          - action: { character: { char: "u" } }
+            width: { percentage: 0.125 }
+            label: "U"
+            swipe:
+              - direction: up
+                action: { character: { char: "7" } }
+                display: true
+          - action: { character: { char: "i" } }
+            width: { percentage: 0.125 }
+            label: "I"
+            swipe:
+              - direction: up
+                action: { character: { char: "8" } }
+                display: true
+          - action: { character: { char: "o" } }
+            width: { percentage: 0.125 }
+            label: "O"
+            swipe:
+              - direction: up
+                action: { character: { char: "9" } }
+                display: true
+          - action: { character: { char: "p" } }
+            width: { percentage: 0.125 }
+            label: "P"
+            swipe:
+              - direction: up
+                action: { character: { char: "0" } }
+                display: true
+
+      - keys:
+          - action: { characterMargin: { char: "a" } }
+            width: available
+          - action: { character: { char: "a" } }
+            width: { percentage: 0.111 }
+            label: "A"
+            swipe:
+              - direction: up
+                action: { character: { char: "!" } }
+                processByRIME: true
+                display: true
+              - direction: down
+                action: { character: { char: "`" } }
+                processByRIME: true
+                display: true
+          - action: { character: { char: "s" } }
+            width: { percentage: 0.111 }
+            label: "S"
+            swipe:
+              - direction: up
+                action: { character: { char: "@" } }
+                display: true
+          - action: { character: { char: "d" } }
+            width: { percentage: 0.111 }
+            label: "D"
+            swipe:
+              - direction: up
+                action: { character: { char: "#" } }
+                display: true
+          - action: { character: { char: "f" } }
+            width: { percentage: 0.111 }
+            label: "F"
+            swipe:
+              - direction: up
+                action: { character: { char: "$" } }
+                processByRIME: true
+                display: true
+          - action: { character: { char: "g" } }
+            width: { percentage: 0.111 }
+            label: "G"
+            swipe:
+              - direction: up
+                action: { character: { char: "%" } }
+                display: true
+          - action: { character: { char: "h" } }
+            width: { percentage: 0.111 }
+            label: "H"
+            swipe:
+              - direction: up
+                action: { character: { char: "&" } }
+                display: true
+          - action: { character: { char: "j" } }
+            width: { percentage: 0.111 }
+            label: "J"
+            swipe:
+              - direction: up
+                action: { character: { char: "*" } }
+                display: true
+          - action: { character: { char: "k" } }
+            width: { percentage: 0.111 }
+            label: "K"
+            swipe:
+              - direction: up
+                action: { character: { char: "(" } }
+                display: true
+          - action: { character: { char: "l" } }
+            width: { percentage: 0.111 }
+            label: "L"
+            swipe:
+              - direction: up
+                action: { character: { char: ")" } }
+                display: true
+
+
+
+
+      - keys:
+          - action: { character: { char: "z" } }
+            width: { percentage: 0.142 }
+            label: "Z"
+            swipe:
+              - direction: up
+                action: { character: { char: "~" } }
+                display: true
+          - action: { character: { char: "x" } }
+            width: { percentage: 0.142 }
+            label: "X"
+            swipe:
+              - direction: up
+                action: { character: { char: ":" } }
+                processByRIME: true
+                display: true
+          - action: { character: { char: "c" } }
+            width: { percentage: 0.142 }
+            label: "C"
+            swipe:
+              - direction: up
+                action: { character: { char: "'" } }
+                display: true
+          - action: { character: { char: "v" } }
+            width: { percentage: 0.142 }
+            label: "V"
+            swipe:
+              - direction: up
+                action: { character: { char: "_" } }
+                display: true
+          - action: { character: { char: "b" } }
+            width: { percentage: 0.142 }
+            label: "B"
+            swipe:
+              - direction: up
+                action: { character: { char: "," } }
+                label: "，"
+                processByRIME: true
+                display: true
+          - action: { character: { char: "n" } }
+            width: { percentage: 0.142 }
+            label: "N"
+            swipe:
+              - direction: up
+                action: { character: { char: "." } }
+                label: "。"
+                processByRIME: true
+                display: true
+          - action: { character: { char: "m" } }
+            width: { percentage: 0.142 }
+            label: "M"
+            swipe:
+              - direction: up
+                action: { character: { char: "?" } }
+                label: "？"
+                processByRIME: true
+                display: true
+      - keys:
+          - action: { keyboardType: numericNineGrid }
+            width: { percentage: 0.125 }
+          - action: { character: { char: "," } }
+            width: { percentage: 0.125 }
+            label: "，"
+            processByRIME: true
+            swipe:
+              - direction: up
+                action: { character: { char: "." } }
+                label: "。"
+                processByRIME: true
+                display: true
+          - action: space
+            width: available
+            label:
+              loadingText: "加载中..."
+              text: "空格"
+
+          - action: { keyboardType: alphabetic }
+            width: { percentage: 0.125 }
+          - action: enter
+            width: { percentage: 0.25 }
