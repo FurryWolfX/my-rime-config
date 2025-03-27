@@ -1,6 +1,6 @@
-# 自用定制化输入方案（V2）
+# 自用定制化输入方案
 
-具体内容请访问 `v2` 分支
+考虑到国内用户访问 github 太慢，仓库迁移至 [gitee](https://gitee.com/wolfx/my-rime-config)
 
 ## 支持的输入模式
 
@@ -15,7 +15,3 @@
 - [墨奇音形(极其强大的音形方案)](https://github.com/gaboolic/rime-shuangpin-fuzhuma)
 - [虎码(官方词库)](https://github.com/humatiger/huma)
 - [胖虎(极其强大的虎码增强版)](https://github.com/rimeinn/rime-tiger)
-
-## 老版本
-
-请访问 `v1` 分支
